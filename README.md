@@ -1,7 +1,7 @@
 # Addressing-the-Constraints-of-Active-Learning-on-the-Edge
 Code used in the paper "Addressing the Constraints of Active Learning on the Edge" presented at PAISE 2021
 
-# Directory structure with data and models
+# Directory structure
 After running get_data.py (which gets and formats data), initial_model_train.py (trains initial models and makes data caches), and the experiments 
 (bee_test.py, monkey_test.py, and mnist_test.py) which makes data in the folder results, the directory 
 should look like the following.
