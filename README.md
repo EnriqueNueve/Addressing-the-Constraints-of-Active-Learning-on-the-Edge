@@ -48,10 +48,51 @@ should look like the following.
 # Environment for code
 Tested using python 3.6.12 and packages listed in requirements.txt
 
+# How to get data
+Data download links:
+* MNIST: https://www.kaggle.com/oddrationale/mnist-in-csv
+* Bees: https://www.kaggle.com/jenny18/honey-bee-annotated-images/home
+* Monkey: https://www.kaggle.com/slothkong/10-monkey-species/home
+
+Create a dir structure as such and place downloaded data in folders respectively:
+```
+.
+├── DataSets
+│   ├── Bees
+│   │   └── archive.zip
+│   ├── MNIST
+│   │   └── archive.zip
+│   └── Monkey
+│       └── archive.zip
+├── __init__.py
+└── data.py
+```
+Then run data_prep.py. This will format the data in the folders and produce:
+```
+.
+├── DataSets
+│   ├── Bees
+│   │   ├── archive.zip
+│   │   └── raw_data
+│   │       ├── data_tab.csv
+│   │       └── images
+│   ├── MNIST
+│   │   ├── archive.zip
+│   │   └── raw_data
+│   │       ├── data_tab.csv
+│   │       └── mnist.csv
+│   └── Monkey
+│       ├── archive.zip
+│       └── raw_data
+│           ├── data_tab.csv
+│           └── images
+├── __init__.py
+└── data.py
+```
+
 # How to run experiments from paper
-1. Run get_data.py
-2. Run initial_train_model.py
-3. Run mnist_test.py
-4. Run bee_test.py
-5. Run monkey_test.py
-6. Run analyze_results.ipynb
+1. Run initial_train_model.py
+2. Run mnist_test.py
+3. Run bee_test.py
+4. Run monkey_test.py
+5. Run analyze_results.ipynb
