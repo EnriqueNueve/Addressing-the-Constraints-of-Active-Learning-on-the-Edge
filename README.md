@@ -54,4 +54,4 @@ Tested using python 3.6.12 and packages listed in requirements.txt
 3. Run mnist_test.py
 4. Run bee_test.py
 5. Run monkey_test.py
-6. Run analyze_results.py
+6. Run analyze_results.ipynb
