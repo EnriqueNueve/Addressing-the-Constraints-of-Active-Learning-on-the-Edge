@@ -2,7 +2,7 @@
 Code used in the paper "Addressing the Constraints of Active Learning on the Edge" presented at PAISE 2021
 
 # Environment for code
-Run using python 3.6.12 and packages listed in requirements.txt
+Tested using python 3.6.12 and packages listed in requirements.txt
 
 # How to run experiments from paper
 1. Run get_data.py
