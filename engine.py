@@ -11,12 +11,10 @@ import matplotlib.pyplot as plt
 import random
 import copy
 
-
 #######################################################
 
 def testCallEngine():
     print("Called test function from ~/engine.py")
-
 
 #######################################################
 
@@ -458,10 +456,6 @@ class Engine():
         b = np.concatenate((unlabeled_pred, unlabeled_targets), axis=1)
         temp_dataset = np.concatenate((a, b), axis=0)
 
-        # for i in range(50):
-        #    temp_dataset = np.concatenate((a, temp_dataset), axis=0)
-        # np.random.shuffle(temp_dataset)
-
         # 3. train binary classifier
         if self.algoClass.algo_name == "OC":
             self.algoClass.trainBinaryClassifier(labeled_pred, labeled_pred.shape[0])
@@ -472,8 +466,6 @@ class Engine():
             # Make MemAE augmented dataset
             _, labeled_MemAE_data, _ = self.algoClass.model(labeled_pred)
             _, unlabeled_MemAE_data, _ = self.algoClass.model(unlabeled_pred)
-            #labeled_MemAE_data, _, _ = self.algoClass.model(labeled_pred)
-            #unlabeled_MemAE_data, _, _ = self.algoClass.model(unlabeled_pred)
             a = np.concatenate((labeled_MemAE_data, labeled_targets), axis=1)
             b = np.concatenate((unlabeled_MemAE_data, unlabeled_targets), axis=1)
             MemAE_dataset = np.concatenate((a, b), axis=0)
@@ -595,13 +587,10 @@ class Engine():
                 for id in ids:
                     if id in self.dataClass.unlabeled_cache[i]:
                         self.dataClass.unlabeled_cache[i].remove(id)
-                # [if id in self.dataClass.unlabeled_cache[i].remove(id) for id in ids]
         elif self.dataClass.bins == 1:
-
             for id in ids:
                 if id in self.dataClass.unlabeled_cache:
                     self.dataClass.unlabeled_cache.remove(id)
-            # WORKING HERE ;;;;;;;;;
 
         # ------------------------------------
         # 2. Train and log
@@ -621,9 +610,6 @@ class Engine():
         """
 
         self.val_track = val_track
-
-        # Working here
-        #self.modelManager.loadBestValWeights("tmp/val_best_weights.h5")
 
         print("\n")
         print("-" * 20)
@@ -678,7 +664,6 @@ class Engine():
             samples = np.mean(samples)
             val_metrics.append(samples)
             print("{}: {}".format(self.modelManager.modelObject.metrics[i].name, samples))
-
 
         time_round = time.time() - start_time
         self.updateLog(round="val_best", time_round=time_round, batch_size=batch_size,
@@ -774,12 +759,10 @@ class Engine():
 
     def saveModel(self, model_name=None):
         if model_name == None:
-            #self.modelManager.modelObject.model.save('model')
             self.modelManager.modelObject.model.save_weights('model')
         else:
             self.modelManager.modelObject.model.save_weights(model_name+".h5")
 
     def loadModel(self, model_name):
-        #self.modelManager.modelObject.model = tf.keras.models.load_model(model_name)
         self.modelManager.modelObject.model.load_weights(model_name+".h5")
         self.modelManager.modelObject.model.compile()

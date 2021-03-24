@@ -7,7 +7,7 @@ import tensorflow as tf
 
 #######################################################
 
-NTEST = 10
+NTEST = 2
 
 def testPassive():
     for i in range(0,NTEST):
@@ -258,6 +258,12 @@ def testH():
         engine.saveLog(path="results/cm/8/"+str(i)+"_log.csv")
 
 def main():
+    if not os.path.exists('results'):
+        os.makedirs('results')
+
+    if not os.path.exists('results/mnist'):
+        os.makedirs('results/mnist')
+
     testPassive()
     testMargin()
     testA()
