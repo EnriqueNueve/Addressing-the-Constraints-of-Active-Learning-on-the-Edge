@@ -3,7 +3,6 @@ from importlib import import_module
 import abc
 import tensorflow as tf
 
-
 #######################################################
 
 class zooKeeper():
