@@ -7,7 +7,7 @@ import tensorflow as tf
 
 #######################################################
 
-NTEST = 10
+NTEST = 2
 
 def testPassive():
     for i in range(0,NTEST):
@@ -266,15 +266,47 @@ def main():
     if not os.path.exists('results/bees'):
         os.makedirs('results/bees')
 
+    if not os.path.exists('results/bees/passive'):
+        os.makedirs('results/bees/passive')
     testPassive()
+
+    if not os.path.exists('results/bees/margin'):
+        os.makedirs('results/bees/margin')
     testMargin()
+
+    if not os.path.exists('results/bees/cm'):
+        os.makedirs('results/bees/cm')
+
+    if not os.path.exists('results/bees/cm/1'):
+        os.makedirs('results/bees/cm/1')
     testA()
+
+    if not os.path.exists('results/bees/cm/2'):
+        os.makedirs('results/bees/cm/2')
     testB()
+
+    if not os.path.exists('results/bees/cm/3'):
+        os.makedirs('results/bees/cm/3')
     testC()
+
+    if not os.path.exists('results/bees/cm/4'):
+        os.makedirs('results/bees/cm/4')
     testD()
+
+    if not os.path.exists('results/bees/cm/5'):
+        os.makedirs('results/bees/cm/5')
     testE()
+
+    if not os.path.exists('results/bees/cm/6'):
+        os.makedirs('results/bees/cm/6')
     testF()
+
+    if not os.path.exists('results/bees/cm/7'):
+        os.makedirs('results/bees/cm/7')
     testG()
+
+    if not os.path.exists('results/bees/cm/8'):
+        os.makedirs('results/bees/cm/8')
     testH()
 
 main()

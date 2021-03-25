@@ -79,7 +79,7 @@ def testA():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/1/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/1/"+str(i)+"_log.csv")
 
 def testB():
     for i in range(0,NTEST):
@@ -104,7 +104,7 @@ def testB():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/2/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/2/"+str(i)+"_log.csv")
 
 def testC():
     for i in range(0,NTEST):
@@ -129,7 +129,7 @@ def testC():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/3/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/3/"+str(i)+"_log.csv")
 
 def testD():
     for i in range(0,NTEST):
@@ -154,7 +154,7 @@ def testD():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/4/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/4/"+str(i)+"_log.csv")
 
 def testE():
     for i in range(0,NTEST):
@@ -179,7 +179,7 @@ def testE():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/5/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/5/"+str(i)+"_log.csv")
 
 def testF():
     for i in range(0,NTEST):
@@ -204,7 +204,7 @@ def testF():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/6/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/6/"+str(i)+"_log.csv")
 
 def testG():
     for i in range(0,NTEST):
@@ -229,7 +229,7 @@ def testG():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/7/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/7/"+str(i)+"_log.csv")
 
 def testH():
     for i in range(0,NTEST):
@@ -255,7 +255,7 @@ def testH():
         engine = Engine(algo, dataClass, zk, sample_size)
         engine.loadModel("mnist_model")
         engine.run(rounds=10, cycles=20, batch_size=32, val=True, val_track="sparse_categorical_accuracy", plot=False)
-        engine.saveLog(path="results/cm/8/"+str(i)+"_log.csv")
+        engine.saveLog(path="results/mnist/cm/8/"+str(i)+"_log.csv")
 
 def main():
     if not os.path.exists('tmp'):
@@ -267,15 +267,47 @@ def main():
     if not os.path.exists('results/mnist'):
         os.makedirs('results/mnist')
 
+    if not os.path.exists('results/mnist/passive'):
+        os.makedirs('results/mnist/passive')
     testPassive()
+
+    if not os.path.exists('results/mnist/margin'):
+        os.makedirs('results/mnist/margin')
     testMargin()
+
+    if not os.path.exists('results/mnist/cm'):
+        os.makedirs('results/mnist/cm')
+
+    if not os.path.exists('results/mnist/cm/1'):
+        os.makedirs('results/mnist/cm/1')
     testA()
+
+    if not os.path.exists('results/mnist/cm/2'):
+        os.makedirs('results/mnist/cm/2')
     testB()
+
+    if not os.path.exists('results/mnist/cm/3'):
+        os.makedirs('results/mnist/cm/3')
     testC()
+
+    if not os.path.exists('results/mnist/cm/4'):
+        os.makedirs('results/mnist/cm/4')
     testD()
+
+    if not os.path.exists('results/mnist/cm/5'):
+        os.makedirs('results/mnist/cm/5')
     testE()
+
+    if not os.path.exists('results/mnist/cm/6'):
+        os.makedirs('results/mnist/cm/6')
     testF()
+
+    if not os.path.exists('results/mnist/cm/7'):
+        os.makedirs('results/mnist/cm/7')
     testG()
+
+    if not os.path.exists('results/mnist/cm/8'):
+        os.makedirs('results/mnist/cm/8')
     testH()
 
 main()

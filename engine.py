@@ -508,6 +508,7 @@ class Engine():
 
     def clusterMarginWork(self,cache_ids,batch_size):
         # Sample Bernouli to determine whether to explore or exploit
+        print('p value: ',self.algoClass.p)
         s = np.random.binomial(1, self.algoClass.p, 1)
 
         print("Bernoulli Sample: ", s)
@@ -637,7 +638,7 @@ class Engine():
                         samples.append((sample[k]))
                     samples = np.mean(samples)
                     val_metrics.append(samples)
-                    if self.algoClass.algo_name == "clusterMargin" or self.algoClass.algo_name == "clusterMargin2" and i == 0:
+                    if ((self.algoClass.algo_name == "clusterMargin") and (i == 0)):
                         self.algoClass.p = self.algoClass.adjustP(samples)
 
                     print("{}: {}".format(self.modelManager.modelObject.metrics[i].name, samples))
@@ -764,5 +765,5 @@ class Engine():
             self.modelManager.modelObject.model.save_weights(model_name+".h5")
 
     def loadModel(self, model_name):
-        self.modelManager.modelObject.model.load_weights(model_name+".h5")
+        self.modelManager.modelObject.model.load_weights('Models/'+model_name+".h5")
         self.modelManager.modelObject.model.compile()

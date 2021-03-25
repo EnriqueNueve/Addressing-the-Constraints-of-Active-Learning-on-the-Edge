@@ -266,15 +266,47 @@ def main():
     if not os.path.exists('results/monkey'):
         os.makedirs('results/monkey')
 
+    if not os.path.exists('results/monkey/passive'):
+        os.makedirs('results/monkey/passive')
     testPassive()
+
+    if not os.path.exists('results/monkey/margin'):
+        os.makedirs('results/monkey/margin')
     testMargin()
+
+    if not os.path.exists('results/monkey/cm'):
+        os.makedirs('results/monkey/cm')
+
+    if not os.path.exists('results/monkey/cm/1'):
+        os.makedirs('results/monkey/cm/1')
     testA()
+
+    if not os.path.exists('results/monkey/cm/2'):
+        os.makedirs('results/monkey/cm/2')
     testB()
+
+    if not os.path.exists('results/monkey/cm/3'):
+        os.makedirs('results/monkey/cm/3')
     testC()
+
+    if not os.path.exists('results/monkey/cm/4'):
+        os.makedirs('results/monkey/cm/4')
     testD()
+
+    if not os.path.exists('results/monkey/cm/5'):
+        os.makedirs('results/monkey/cm/5')
     testE()
+
+    if not os.path.exists('results/monkey/cm/6'):
+        os.makedirs('results/monkey/cm/6')
     testF()
+
+    if not os.path.exists('results/monkey/cm/7'):
+        os.makedirs('results/monkey/cm/7')
     testG()
+
+    if not os.path.exists('results/monkey/cm/8'):
+        os.makedirs('results/monkey/cm/8')
     testH()
 
 main()
